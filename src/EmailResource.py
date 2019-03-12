@@ -50,6 +50,6 @@ def send_email():
 
     finally:
         print('[!] Finished')
-
+        
 
 send_email()
