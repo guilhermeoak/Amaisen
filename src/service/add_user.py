@@ -1,5 +1,5 @@
-from .model.user import User
-from .util import connection as con
+from src.model.user import User
+from src.util import connection as con
 from os import system
 import getpass
 

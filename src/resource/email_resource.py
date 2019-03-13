@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import getpass
 import sys
-from . import util
+from src import util
 from src.util import table_settings
 
 
@@ -14,12 +14,12 @@ def send_email():
     table_settings.setTable()
     table = table_settings.getTable()
 
-    sql = ('SELECT * FROM %s ' % table)    
+    sql = ('SELECT * FROM %s ' % table)
     query = util.connection.setData(sql)
 
     my_email = util.my_email
     print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
-        
+
     password = getpass.getpass(prompt='[*]Type your email password: ')
     subject = str(input('[*]Type the subject: '))
     message = str(input('[*]Write your message: '))
@@ -32,7 +32,6 @@ def send_email():
 
         number_of_sent = 0
         for receiver in query:
-
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.starttls()
             server.login(my_email, password)
@@ -50,7 +49,7 @@ def send_email():
 
             print('[%i] of' % number_of_sent, len(query), 'sent to ' + '\033[32m' +
                   '%s %s --> %s' % (receiver[1], receiver[2], receiver[3]) + '\033[0;0m')
-            
+
             server.quit()
 
         print('[!] %i emails sent!' % len(query))
@@ -60,4 +59,3 @@ def send_email():
 
     finally:
         print('[!] Finished')
-        

@@ -1,7 +1,5 @@
-import getpass
-from .connection import setData
-import subprocess
-from .utils import whatToSay
+from src.util.connection import setData
+from src.util.utils import whatToSay
 from datetime import datetime
 import subprocess
 import getpass
@@ -10,7 +8,7 @@ subprocess.run(['clear'])
 
 user = getpass.getuser()
 now = datetime.now()
-print('System started...\n' + whatToSay(now.hour), user.capitalize() + '\n')
+print('\033[32m' + 'System started...\n' + whatToSay(now.hour), user.capitalize() + '\n' + '\033[0;0m')
 
 class SignIn:
 
@@ -18,8 +16,8 @@ class SignIn:
 
         global result
 
-        login = str(input('Login: '))
-        passwd = getpass.getpass(prompt='Password: ')
+        login = str(input('\033[33m' + 'Login: ' + '\033[0;0m'))
+        passwd = getpass.getpass(prompt='\033[33m' + 'Password: '+ '\033[0;0m')
         query = ('SELECT LOGIN, PASSWORD, EMAIL FROM USER WHERE TYPE = "admin" and LOGIN = "%s" AND PASSWORD = "%s";' % (
             login, passwd))
 

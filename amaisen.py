@@ -1,18 +1,19 @@
 #!/bin/bash
 
-from src import add_user
-import src.EmailResource as EmailResource
+from src.service import add_user
+import src.resource.email_resource as EmailResource
 import subprocess
 
 print('\nWhato do you want to do?')
 
+
 def start():
     subprocess.run(['clear'])
-    print('1: Send emails')
-    print('2: New user registration')
-    print('q: Exit')
+    print('\033[33m' + '1: Send emails' + '\033[0;0m')
+    print('\033[33m' + '2: New user registration' + '\033[0;0m')
+    print('\033[33m' + 'q: Exit' + '\033[0;0m')
 
-    number = str(input('\nChoose one: '))
+    number = str(input('\033[32m' + '\nChoose one: ' + '\033[0;0m'))
 
     def options(option):
         if option == '1':
@@ -22,7 +23,7 @@ def start():
         if option == 'q':
             return False
 
-    options(number)
+    return options(number)
 
 
 while True:

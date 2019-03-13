@@ -3,10 +3,10 @@ import mysql.connector
 
 def setData(query):
     mydb = mysql.connector.connect(
-        host='',
-        user='',
-        passwd='',
-        database=''
+        host='localhost',
+        user='guilherme',
+        passwd='3141',
+        database='USER'
     )
 
     def getData():
