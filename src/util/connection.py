@@ -1,11 +1,11 @@
 import mysql.connector
 
 
-def setData(user, passwd, query):
+def setData(query):
     mydb = mysql.connector.connect(
         host="localhost",
-        user=user,
-        passwd=passwd,
+        user='guilherme',
+        passwd='3131',
         database="USER"
     )
 
