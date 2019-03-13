@@ -1,4 +1,4 @@
-#  Amaisen
-## automatic-emails-sender
+# Amaisen
+## Automatic Mails Sender
 
 
