@@ -1,49 +1,49 @@
 class User:
-    
-    def __init__(self, name, lastname, tp, email, login, password):
+
+    def __init__(self, name, last_name, tp, email, login, password):
         self.name = name
-        self.lastname = lastname
-        self.tp = tp #type of account
+        self.last_name = last_name
+        self.tp = tp  # type of account
         self.email = email
         self.login = login
         self.password = password
 
-    
-    def setName(self, name):
+    # ------------setters--------------------------------------
+
+    def set_name(self, name):
         self.name = name
 
-    def setLastname(self, lastname):
-        self.lastname = lastname
-    
-    def setTp(self, tp):
+    def set_last_name(self, last_name):
+        self.last_name = last_name
+
+    def set_tp(self, tp):
         self.tp = tp
 
-    def setEmail(self, email):
+    def set_email(self, email):
         self.email = email
 
-    def setLogin(self, login):
+    def set_login(self, login):
         self.login = login
 
-    def setPassword(self, passowd):
-        self.passowd = passowd
+    def set_password(self, password):
+        self.password = password
 
-    def getName(self):
+    # ------------getters--------------------------------------
+
+    def get_name(self):
         return self.name
 
-    def getLastname(self):
-        return self.lastname
+    def get_last_name(self):
+        return self.last_name
 
-    def getTp(self):
+    def get_tp(self):
         return self.tp
 
-    def getEmail(self):
+    def get_email(self):
         return self.email
 
-    def getLogin(self):
+    def get_login(self):
         return self.login
 
-    def getPassword(self):
-        return self.passowd
-
-
-        
+    def get_password(self):
+        return self.password

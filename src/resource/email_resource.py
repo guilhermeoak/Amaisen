@@ -11,8 +11,8 @@ class Email:
 
     def __init__(self):
 
-        table_settings.setTable()
-        table = table_settings.getTable()
+        table_settings.set_table()
+        table = table_settings.get_table()
 
         sql = ('SELECT * FROM %s ' % table)
         query = util.connection.setData(sql)
