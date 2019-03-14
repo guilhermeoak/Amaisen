@@ -3,24 +3,20 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import getpass
 from src import util
-from src.util import table_settings
+from src.util import tables
 from src.service.sign_in import SignIn
 
 
 class Email:
 
     def __init__(self):
-
-        table_settings.set_table()
-        table = table_settings.get_table()
+        table = tables.set_table()
 
         sql = ('SELECT * FROM %s ' % table)
         query = util.connection.setData(sql)
 
         my_email = SignIn.getEmail()
         print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
-
-        #my_email = str(input('Your email: '))
 
         password = getpass.getpass(prompt='[*]Type your email password: ')
         subject = str(input('[*]Type the subject: '))
