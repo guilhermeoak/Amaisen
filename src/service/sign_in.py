@@ -1,14 +1,5 @@
 from src.util.connection import setData
-from src.util.utils import whatToSay
-from datetime import datetime
-import subprocess
 import getpass
-
-subprocess.run(['clear'])
-
-user = getpass.getuser()
-now = datetime.now()
-print('\033[32m' + 'System started...\n' + whatToSay(now.hour), user.capitalize() + '\n' + '\033[0;0m')
 
 
 class SignIn:

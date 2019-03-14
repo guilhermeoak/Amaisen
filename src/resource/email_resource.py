@@ -1,30 +1,30 @@
-#!/bin/bash
-
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import getpass
-import sys
 from src import util
 from src.util import table_settings
+from src.service.sign_in import SignIn
 
 
-def send_email():
+class Email:
 
-    table_settings.setTable()
-    table = table_settings.getTable()
+    def __init__(self):
 
-    sql = ('SELECT * FROM %s ' % table)
-    query = util.connection.setData(sql)
+        table_settings.setTable()
+        table = table_settings.getTable()
 
-    my_email = util.my_email
-    print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
+        sql = ('SELECT * FROM %s ' % table)
+        query = util.connection.setData(sql)
 
-    password = getpass.getpass(prompt='[*]Type your email password: ')
-    subject = str(input('[*]Type the subject: '))
-    message = str(input('[*]Write your message: '))
+        my_email = SignIn.getEmail()
+        print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
 
-    try:
+        #my_email = str(input('Your email: '))
+
+        password = getpass.getpass(prompt='[*]Type your email password: ')
+        subject = str(input('[*]Type the subject: '))
+        message = str(input('[*]Write your message: '))
 
         print('\n[>] - Emails to be sent: %i' % len(query))
 
@@ -53,9 +53,4 @@ def send_email():
             server.quit()
 
         print('[!] %i emails sent!' % len(query))
-
-    except:
-        print('An error occured:', sys.exc_info()[0], '\n', sys.exc_info()[1])
-
-    finally:
         print('[!] Finished')

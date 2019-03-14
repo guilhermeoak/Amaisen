@@ -20,8 +20,8 @@ class AddUser:
         user = 'guilherme'
         db_passwd = '3141'
         query = (
-                    "INSERT INTO USER (TYPE, LOGIN, PASSWORD, NAME, LASTNAME, EMAIL) VALUES('%s', '%s','%s', '%s', '%s', '%s')" %
-                    (str(new_user.tp), str(new_user.login), str(new_user.password), str(new_user.name),
-                     str(new_user.lastname), str(new_user.email)))
+                "INSERT INTO USER (TYPE, LOGIN, PASSWORD, NAME, LASTNAME, EMAIL) VALUES('%s', '%s','%s', '%s', '%s', '%s')" %
+                (str(new_user.tp), str(new_user.login), str(new_user.password), str(new_user.name),
+                 str(new_user.lastname), str(new_user.email)))
 
         con.insertData(user, db_passwd, query)
