@@ -17,11 +17,10 @@ class AddUser:
 
         new_user = User(name, last_name, tp, email, login, password)
 
-        user = 'guilherme'
-        db_passwd = '3141'
         query = (
-                "INSERT INTO USER (TYPE, LOGIN, PASSWORD, NAME, LASTNAME, EMAIL) VALUES('%s', '%s','%s', '%s', '%s', '%s')" %
+                "INSERT INTO USER (TYPE, LOGIN, PASSWORD, NAME, LASTNAME, EMAIL) VALUES('%s', '%s','%s', '%s', '%s', "
+                "'%s')" %
                 (str(new_user.tp), str(new_user.login), str(new_user.password), str(new_user.name),
                  str(new_user.last_name), str(new_user.email)))
 
-        con.insertData(user, db_passwd, query)
+        con.insert_data(query)
