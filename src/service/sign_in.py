@@ -1,4 +1,4 @@
-from src.util.connection import setData
+from src.util.connection import select_data
 import getpass
 
 
@@ -14,7 +14,7 @@ class SignIn:
                 'SELECT LOGIN, PASSWORD, EMAIL FROM USER WHERE TYPE = "admin" and LOGIN = "%s" AND PASSWORD = "%s";' % (
             login, passwd))
 
-        result = setData(query)
+        result = select_data(query)
 
         if len(result) > 0:
             print("User logged...")

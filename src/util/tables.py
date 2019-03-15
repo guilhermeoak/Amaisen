@@ -11,7 +11,7 @@ def set_table():
 
     print('\n' + '\033[33m' + 'Who will you sent emails for? ' + '\033[0;0m' + '\n')
 
-    result = con.setData(sql)
+    result = con.select_data(sql)
 
     for table in result:
         tableList.append(table)

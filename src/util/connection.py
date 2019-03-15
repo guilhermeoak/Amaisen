@@ -1,7 +1,7 @@
 import mysql.connector
 
 
-def setData(query):
+def select_data(query):
     mydb = mysql.connector.connect(
         host='localhost',
         user='guilherme',
@@ -18,7 +18,7 @@ def setData(query):
     return getData()
 
 
-def insert_data(uery):
+def insert_data(query):
     mydb = mysql.connector.connect(
         host="localhost",
         user='guilherme',

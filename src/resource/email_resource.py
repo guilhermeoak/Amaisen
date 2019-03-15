@@ -13,7 +13,7 @@ class Email:
         table = tables.set_table()
 
         sql = ('SELECT * FROM %s ' % table)
-        query = util.connection.setData(sql)
+        query = util.connection.select_data(sql)
 
         my_email = SignIn.getEmail()
         print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
