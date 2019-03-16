@@ -3,19 +3,15 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-from src.service.sign_in import SignIn
 from src import util
 
 
 class SendEmail:
 
-    def __init__(self, password, sql, subject, message):
+    def __init__(self, my_email, password, sql, subject, message):
         query = util.connection.select_data(sql)
         self.emails_to_send = len(query)
-
-        my_email = SignIn.getEmail()
-        print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
+        print('\n[>] - Emails to be sent: %i' % len(query))
 
         msg = MIMEMultipart()
 
@@ -35,7 +31,6 @@ class SendEmail:
             server.sendmail(my_email, receiver[3], text)
 
             number_of_sent += 1
-
             print('[%i] of' % number_of_sent, len(query), 'sent to ' + '\033[32m' +
                   '%s %s --> %s' % (receiver[1], receiver[2], receiver[3]) + '\033[0;0m')
 
