@@ -4,8 +4,8 @@ import mysql.connector
 def select_data(query):
     mydb = mysql.connector.connect(
         host='localhost',
-        user='guilherme',
-        passwd='3141',
+        user='user',
+        passwd='1234',
         database='USER'
     )
 
