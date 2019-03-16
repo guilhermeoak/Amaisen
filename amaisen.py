@@ -12,13 +12,12 @@ import subprocess
 
 subprocess.run(['clear'])
 
-user = getpass.getuser()
 now = datetime.now()
-print('\033[32m' + 'System started...\n' + whatToSay(now.hour), user.capitalize() + '\n' + '\033[0;0m')
+print(whatToSay(now.hour) + "! Amaisen is running")
 
 
 def start():
-    print('\nWhat do you want to do?')
+    print('What do you want to do?')
 
     while True:
 
