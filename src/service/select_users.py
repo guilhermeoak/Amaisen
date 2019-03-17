@@ -8,6 +8,7 @@ class SelectUser:
 
     def __init__(self):
         if SignIn.get_user_type() == 'admin':
+            subprocess.run(['clear'])
             sql = 'SELECT * FROM USER'
             result = con.select_data(sql)
 

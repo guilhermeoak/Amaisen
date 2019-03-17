@@ -57,14 +57,18 @@ def start():
         if number == '1':
             Email()
             print(input('Press Enter to continue...'))
+            subprocess.run(['clear'])
         if number == '2':
             AddUser()
             print(input('Press Enter to continue...'))
+            subprocess.run(['clear'])
         if number == '3':
             SelectUser()
             print(input('Press Enter to continue...'))
+            subprocess.run(['clear'])
         if number == '4':
             RemoveUser()
+            subprocess.run(['clear'])
         if number == '5':
             subprocess.run(['clear'])
             start()

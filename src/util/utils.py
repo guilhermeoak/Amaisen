@@ -14,7 +14,7 @@ def format_message(message):
     y, x = os.popen('stty size', 'r').read().split()
     space = ''
     count = 0
-    while count < ((int(x) / 3) + 5):
+    while count < (int(x) / 3):
         space = space + ' '
         count += 1
 
