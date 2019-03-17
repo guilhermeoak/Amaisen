@@ -1,4 +1,4 @@
 # Amaisen
-### Automatic Mails Sender
+### Automatic Mail Sender
 
 
