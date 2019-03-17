@@ -3,17 +3,19 @@
 from src.resource.email_resource import Email
 from src.service.add_user import AddUser
 from src.service.sign_in import SignIn
-from src.util.utils import whatToSay
+from src.util.utils import format_message
+from src.util.utils import welcome
 from src.service.remove_user import RemoveUser
 from src.service.select_users import SelectUser
-from _datetime import datetime
 import subprocess
 import sys
+from datetime import datetime
 
 subprocess.run(['clear'])
 
 now = datetime.now()
-print(whatToSay(now.hour) + "! Amaisen is running")
+message = ('\033[34m' + welcome(now.hour) + ' Amaisen is running' + '\033[0;0m')
+format_message(message)
 
 
 def start():
@@ -27,14 +29,12 @@ def start():
 
         if number == 'q':
             subprocess.run(['clear'])
-            print('System finished!')
+            print('\033[31m' + 'System finished!' + '\033[0;0m')
             sys.exit()
         if number == '1':
             AddUser()
         if number == '2':
             break
-
-    print('\033[32m' + 'Put your login data in the respective fields' + '\033[0;0m' + '\n')
 
     sign_in = SignIn()
     sign_in.sign_in()
@@ -52,7 +52,7 @@ def start():
 
         if number == 'q':
             subprocess.run(['clear'])
-            print('System finished!')
+            print('\033[31m' + 'System finished!' + '\033[0;0m')
             sys.exit()
         if number == '1':
             Email()

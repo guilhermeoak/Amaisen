@@ -1,15 +1,19 @@
 from . import connection as con
+from .utils import format_message
+import subprocess
 
 tableList = []
 
 
 def set_table():
+
+    subprocess.run(['clear'])
     global varTable
 
     i = 0
     sql = 'SHOW TABLES;'
 
-    print('\n' + '\033[33m' + 'Who will you sent emails for? ' + '\033[0;0m' + '\n')
+    format_message('\033[33m' + 'Who will you sent emails for? ' + '\033[0;0m')
 
     result = con.select_data(sql)
 
