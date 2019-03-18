@@ -1,4 +1,6 @@
 import os
+import platform
+import subprocess
 
 
 def welcome(hour):
@@ -19,3 +21,13 @@ def format_message(message):
         count += 1
 
     print(space, message)
+
+
+def clear_screen():
+    os_name = platform.system()
+    if os_name == 'Linux' or os_name == 'Mac':
+        subprocess.run(['clear'])
+    if os_name == 'Windows':
+        subprocess.run(['cls'])
+
+

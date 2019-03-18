@@ -30,7 +30,7 @@ def insert_data(query):
         mycursor = mydb.cursor()
         mycursor.execute(query)
         mydb.commit()
-        print(mycursor.rowcount, "user inserted.")
+        print(mycursor.rowcount, "inserted.")
 
     return getData()
 

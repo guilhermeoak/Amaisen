@@ -1,13 +1,12 @@
 from . import connection as con
 from .utils import format_message
-import subprocess
+from src.util.utils import clear_screen
 
 tableList = []
 
 
 def set_table():
-
-    subprocess.run(['clear'])
+    clear_screen()
     global varTable
 
     i = 0

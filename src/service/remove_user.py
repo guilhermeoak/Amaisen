@@ -1,4 +1,4 @@
-import subprocess
+from src.util.utils import clear_screen
 
 from src.util import connection as con
 from src.service.select_users import SelectUser
@@ -25,6 +25,6 @@ class RemoveUser:
                 con.remove_data(query)
 
         else:
-            subprocess.run(['clear'])
+            clear_screen()
             print('\033[31m' + 'You have no permissions to do it!' + '\033[0;0m')
             print(input('Press any key to continue...'))
