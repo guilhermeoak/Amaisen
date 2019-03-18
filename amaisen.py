@@ -6,6 +6,7 @@ from src.service.sign_in import SignIn
 from src.util.utils import format_message
 from src.util.utils import welcome
 from src.util.utils import clear_screen
+from src.util import utils
 from src.service.remove_user import RemoveUser
 from src.service.select_users import SelectUser
 from src.service.add_customer import AddCustomer
@@ -18,6 +19,9 @@ clear_screen()
 now = datetime.now()
 message = ('\033[34m' + welcome(now.hour) + ' Amaisen is running' + '\033[0;0m')
 format_message(message)
+
+utils.check_database()
+utils.check_tables()
 
 
 def start():

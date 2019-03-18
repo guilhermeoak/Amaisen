@@ -1,6 +1,7 @@
 import os
 import platform
 import subprocess
+import mysql.connector
 
 
 def welcome(hour):
@@ -31,3 +32,40 @@ def clear_screen():
         subprocess.run(['cls'])
 
 
+def check_database():
+    mydb = mysql.connector.connect(
+        host='localhost',
+        user='guilherme',
+        passwd='3141',
+    )
+
+    def get_data():
+        my_cursor = mydb.cursor()
+        my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')
+        mydb.commit()
+        print('\033[32m' + 'Database checked.' + '\033[0;0m')
+
+    return get_data()
+
+
+def check_tables():
+    mydb = mysql.connector.connect(
+        host='localhost',
+        user='guilherme',
+        passwd='3141',
+        database='USER'
+    )
+
+    tables = [
+        'CREATE TABLE IF NOT EXISTS USER(ID INT AUTO_INCREMENT PRIMARY KEY, TYPE VARCHAR(255), LOGIN VARCHAR(255), '
+        'PASSWORD VARCHAR(255), NAME VARCHAR(255), LASTNAME VARCHAR(255), EMAIL VARCHAR(255));',
+        'CREATE TABLE IF NOT EXISTS CUSTOMER(ID INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(255), LASTNAME VARCHAR('
+        '255), EMAIL VARCHAR(255), TAG VARCHAR(255));']
+
+    def get_data():
+        my_cursor = mydb.cursor()
+        for table in tables:
+            my_cursor.execute(table)
+        mydb.commit()
+        print('\033[32m' + "Tables checked" + '\033[0;0m')
+    return get_data()
