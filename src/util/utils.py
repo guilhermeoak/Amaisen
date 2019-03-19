@@ -68,4 +68,25 @@ def check_tables():
             my_cursor.execute(table)
         mydb.commit()
         print('\033[32m' + "Tables checked" + '\033[0;0m')
+
+    return get_data()
+
+
+def check_user():
+    mydb = mysql.connector.connect(
+        host='localhost',
+        user='guilherme',
+        passwd='3141',
+        database='USER'
+    )
+
+    query = 'SELECT TYPE FROM USER'
+
+    def get_data():
+        my_cursor = mydb.cursor()
+        my_cursor.execute(query)
+        result = my_cursor.fetchall()
+        if len(result) > 0:
+            return True
+
     return get_data()
