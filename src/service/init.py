@@ -1,16 +1,21 @@
 import sys
-
 from src.service.add_user import AddUser
 from src.util import utils
+from datetime import datetime
 
 
 class Init:
 
     def __init__(self):
-        None
+        utils.clear_screen()
 
-    @staticmethod
-    def init():
+        now = datetime.now()
+        message = ('\033[34m' + utils.welcome(now.hour) + ' Amaisen is running' + '\033[0;0m')
+        utils.format_message(message)
+
+        utils.check_database()
+        utils.check_tables()
+
         if not utils.check_user():
 
             print('\033[33m' + '1: Sign Up' + '\033[0;0m')
