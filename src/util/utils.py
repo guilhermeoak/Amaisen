@@ -43,7 +43,7 @@ def check_database():
         my_cursor = mydb.cursor()
         my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')
         mydb.commit()
-        print('\033[32m' + 'Database checked.' + '\033[0;0m')
+        # print('\033[32m' + '[*]Database checked.' + '\033[0;0m')
 
     return get_data()
 
@@ -67,7 +67,7 @@ def check_tables():
         for table in tables:
             my_cursor.execute(table)
         mydb.commit()
-        print('\033[32m' + "Tables checked" + '\033[0;0m')
+        # print('\033[32m' + "[*]Tables checked" + '\033[0;0m')
 
     return get_data()
 
