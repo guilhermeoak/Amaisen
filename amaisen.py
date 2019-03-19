@@ -11,6 +11,6 @@ while True:
     SignIn.sign_in()
 
     if SignIn.get_user_type() == 'admin':
-        Admin.exec_admin()
+        Admin()
     else:
-        Common.exec_common()
+        Common()

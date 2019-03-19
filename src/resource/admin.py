@@ -11,10 +11,7 @@ from src.util.utils import clear_screen
 class Admin:
 
     def __init__(self):
-        None
 
-    @staticmethod
-    def exec_admin():
         while True:
 
             print('\n' + '\033[33m' + '1: Send emails' + '\033[0;0m')

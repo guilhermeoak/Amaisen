@@ -7,10 +7,6 @@ from src.util.utils import clear_screen
 class Common:
 
     def __init__(self):
-        None
-
-    @staticmethod
-    def exec_common():
 
         while True:
 
