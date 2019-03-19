@@ -6,6 +6,7 @@ from src.service.add_user import AddUser
 from src.service.remove_user import RemoveUser
 from src.service.select_users import SelectUser
 from src.util.utils import clear_screen
+from src.service.select_customers import SelectCustomer
 
 
 class Admin:
@@ -18,8 +19,9 @@ class Admin:
             print('\033[33m' + '2: Add user' + '\033[0;0m')
             print('\033[33m' + '3: Add customer' + '\033[0;0m')
             print('\033[33m' + '4: Show users' + '\033[0;0m')
-            print('\033[33m' + '5: Delete user' + '\033[0;0m')
-            print('\033[33m' + '6: Log out' + '\033[0;0m')
+            print('\033[33m' + '5: Show customers' + '\033[0;0m')
+            print('\033[33m' + '6: Delete user' + '\033[0;0m')
+            print('\033[33m' + '7: Log out' + '\033[0;0m')
             print('\033[33m' + 'q: Exit' + '\033[0;0m')
 
             number = str(input('\033[32m' + '\nChoose one: ' + '\033[0;0m'))
@@ -44,8 +46,11 @@ class Admin:
                 SelectUser()
                 clear_screen()
             if number == '5':
-                RemoveUser()
+                SelectCustomer()
                 clear_screen()
             if number == '6':
+                RemoveUser()
+                clear_screen()
+            if number == '7':
                 clear_screen()
                 break

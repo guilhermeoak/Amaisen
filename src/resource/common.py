@@ -2,6 +2,7 @@ import sys
 from src.resource.email_resource import Email
 from src.service.add_customer import AddCustomer
 from src.util.utils import clear_screen
+from src.service.select_customers import SelectCustomer
 
 
 class Common:
@@ -12,7 +13,8 @@ class Common:
 
             print('\n' + '\033[33m' + '1: Send emails' + '\033[0;0m')
             print('\033[33m' + '2: Add customer' + '\033[0;0m')
-            print('\033[33m' + '3: Log out' + '\033[0;0m')
+            print('\033[33m' + '3: Show customers' + '\033[0;0m')
+            print('\033[33m' + '4: Log out' + '\033[0;0m')
             print('\033[33m' + 'q: Exit' + '\033[0;0m')
 
             number = str(input('\033[32m' + '\nChoose one: ' + '\033[0;0m'))
@@ -30,5 +32,8 @@ class Common:
                 print(input('Press Enter to continue...'))
                 clear_screen()
             if number == '3':
+                SelectCustomer()
+                clear_screen()
+            if number == '4':
                 clear_screen()
                 break
