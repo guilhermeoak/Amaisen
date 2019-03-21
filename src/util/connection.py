@@ -2,11 +2,12 @@ import mysql.connector
 
 USR = 'guilherme'
 PASSWD = '3141'
+LOCALHOST = 'localhost'
 
 
 def select_data(query):
     mydb = mysql.connector.connect(
-        host='localhost',
+        host=LOCALHOST,
         USR=USR,
         passwd=PASSWD,
         database=USR
