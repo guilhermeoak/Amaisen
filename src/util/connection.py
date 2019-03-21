@@ -12,13 +12,13 @@ def select_data(query):
         database=USR
     )
 
-    def getData():
+    def get_data():
         my_cursor = mydb.cursor()
         my_cursor.execute(query)
         result = my_cursor.fetchall()
         return result
 
-    return getData()
+    return get_data()
 
 
 def insert_data(query):
@@ -29,13 +29,13 @@ def insert_data(query):
         database="USR"
     )
 
-    def getData():
+    def get_data():
         my_cursor = mydb.cursor()
         my_cursor.execute(query)
         mydb.commit()
         print(my_cursor.rowcount, "inserted.")
 
-    return getData()
+    return get_data()
 
 
 def remove_data(query):
@@ -46,10 +46,10 @@ def remove_data(query):
         database="USR"
     )
 
-    def getData():
+    def get_data():
         my_cursor = mydb.cursor()
         my_cursor.execute(query)
         mydb.commit()
         print(my_cursor.rowcount, "USR deleted.")
 
-    return getData()
+    return get_data()
