@@ -1,9 +1,9 @@
 import mysql.connector
 
-USER = 'guilherme'
-PASSWD = '3141'
-HOST = 'localhost'
-DB = 'USER'
+USER = ''
+PASSWD = ''
+HOST = ''
+DB = ''
 
 
 def select_data(query):
