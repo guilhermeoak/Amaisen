@@ -2,7 +2,7 @@ import os
 import platform
 import subprocess
 import mysql.connector
-
+from . import connection as con
 
 def welcome(hour):
     if 00 <= hour < 12:
@@ -34,9 +34,9 @@ def clear_screen():
 
 def check_database():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='guilherme',
-        passwd='3141',
+        host=con.HOST,
+        user=con.USER,
+        passwd=con.PASSWD
     )
 
     def get_data():
@@ -50,10 +50,10 @@ def check_database():
 
 def check_tables():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='guilherme',
-        passwd='3141',
-        database='USER'
+        host=con.HOST,
+        user=con.USER,
+        passwd=con.PASSWD,
+        database=con.DB
     )
 
     tables = [
@@ -74,10 +74,10 @@ def check_tables():
 
 def check_user():
     mydb = mysql.connector.connect(
-        host='localhost',
-        user='guilherme',
-        passwd='3141',
-        database='USER'
+        host=con.HOST,
+        user=con.USER,
+        passwd=con.PASSWD,
+        database=con.DB
     )
 
     query = 'SELECT TYPE FROM USER'

@@ -1,16 +1,17 @@
 import mysql.connector
 
-USR = 'guilherme'
+USER = 'guilherme'
 PASSWD = '3141'
-LOCALHOST = 'localhost'
+HOST = 'localhost'
+DB = 'USER'
 
 
 def select_data(query):
     mydb = mysql.connector.connect(
-        host=LOCALHOST,
-        USR=USR,
+        host=HOST,
+        user=USER,
         passwd=PASSWD,
-        database=USR
+        database=DB
     )
 
     def get_data():
@@ -24,10 +25,10 @@ def select_data(query):
 
 def insert_data(query):
     mydb = mysql.connector.connect(
-        host="localhost",
-        USR=USR,
+        host="HOST",
+        user=USER,
         passwd=PASSWD,
-        database="USR"
+        database=DB
     )
 
     def get_data():
@@ -41,16 +42,16 @@ def insert_data(query):
 
 def remove_data(query):
     mydb = mysql.connector.connect(
-        host="localhost",
-        USR=USR,
+        host="HOST",
+        user=USER,
         passwd=PASSWD,
-        database="USR"
+        database=DB
     )
 
     def get_data():
         my_cursor = mydb.cursor()
         my_cursor.execute(query)
         mydb.commit()
-        print(my_cursor.rowcount, "USR deleted.")
+        print(my_cursor.rowcount, "USER deleted.")
 
     return get_data()
