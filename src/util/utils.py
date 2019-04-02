@@ -1,7 +1,6 @@
 import os
 import platform
 import subprocess
-import mysql.connector
 from . import connection as con
 
 
@@ -34,7 +33,6 @@ def clear_screen():
 
 
 def check_database():
-
     def get_data():
         my_cursor = con.mydb.cursor()
         my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')
@@ -44,7 +42,6 @@ def check_database():
 
 
 def check_tables():
-
     tables = [
         'CREATE TABLE IF NOT EXISTS USER(ID INT AUTO_INCREMENT PRIMARY KEY, TYPE VARCHAR(255), LOGIN VARCHAR(255), '
         'PASSWORD VARCHAR(255), NAME VARCHAR(255), LASTNAME VARCHAR(255), EMAIL VARCHAR(255));',
@@ -61,7 +58,6 @@ def check_tables():
 
 
 def check_user():
-
     query = 'SELECT TYPE FROM USER'
 
     def get_data():
