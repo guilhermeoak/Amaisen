@@ -14,7 +14,7 @@ class Email:
         sql = ('SELECT * FROM %s ' % table)
         sign_in = SignIn()
         my_email = sign_in.get_email()
-        print("Your email: " + '\033[32m' + my_email + '\033[0;0m')
+        print("Your email: " + my_email)
 
         password = getpass.getpass(prompt='[*]Type your email password: ')
         subject = str(input('[*]Type the subject: '))

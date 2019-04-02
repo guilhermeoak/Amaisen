@@ -11,17 +11,17 @@ class Common:
 
         while True:
 
-            print('\n' + '\033[33m' + '1: Send emails' + '\033[0;0m')
-            print('\033[33m' + '2: Add customer' + '\033[0;0m')
-            print('\033[33m' + '3: Show customers' + '\033[0;0m')
-            print('\033[33m' + '4: Log out' + '\033[0;0m')
-            print('\033[33m' + 'q: Exit' + '\033[0;0m')
+            print('\n1: Send emails')
+            print('2: Add customer')
+            print('3: Show customers')
+            print('4: Log out')
+            print('q: Exit')
 
-            number = str(input('\033[32m' + '\nChoose one: ' + '\033[0;0m'))
+            number = str(input('\nChoose one: '))
 
             if number == 'q':
                 clear_screen()
-                print('\033[31m' + 'System finished!' + '\033[0;0m')
+                print('System finished!')
                 sys.exit()
             if number == '1':
                 Email()

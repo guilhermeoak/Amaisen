@@ -23,9 +23,9 @@ class SignIn:
             global email
 
             clear_screen()
-            format_message('\033[32m' + 'Put your login data in the respective fields' + '\033[0;0m' + '\n')
-            login = str(input('\033[33m' + 'Login: ' + '\033[0;0m'))
-            passwd = getpass.getpass(prompt='\033[33m' + 'Password: ' + '\033[0;0m')
+            format_message('Put your login data in the respective fields\n')
+            login = str(input('Login: '))
+            passwd = getpass.getpass(prompt='Password: ')
             query = (
                     'SELECT LOGIN, PASSWORD, NAME, EMAIL, TYPE FROM USER WHERE LOGIN = "%s" AND PASSWORD = "%s";' % (
                 login, passwd))
@@ -39,14 +39,14 @@ class SignIn:
 
             if len(result) > 0:
                 clear_screen()
-                message = ('\033[34m' + 'Hello ' + user_name.capitalize() + '\033[0;0m')
+                message = ('Hello ' + user_name.capitalize())
                 format_message(message)
                 print(input('\nPress Enter to continue...'))
 
                 code = 0
             else:
                 clear_screen()
-                format_message('\033[31m' + 'Login or Password wrong, please try again!' + '\033[0;0m')
+                format_message('Login or Password wrong, please try again!')
                 print(input('\nPress Enter to continue...'))
 
     @staticmethod

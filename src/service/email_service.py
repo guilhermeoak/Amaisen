@@ -31,8 +31,8 @@ class SendEmail:
             server.sendmail(my_email, receiver[3], text)
 
             number_of_sent += 1
-            print('[%i] of' % number_of_sent, len(query), '| sent to ' + '\033[32m' +
-                  '%s %s --> %s' % (receiver[1], receiver[2], receiver[3]) + '\033[0;0m')
+            print('[%i] of' % number_of_sent, len(query), '| sent to ' +
+                  '%s %s --> %s' % (receiver[1], receiver[2], receiver[3]))
 
             server.quit()
 

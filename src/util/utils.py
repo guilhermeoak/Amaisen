@@ -4,6 +4,7 @@ import subprocess
 import mysql.connector
 from . import connection as con
 
+
 def welcome(hour):
     if 00 <= hour < 12:
         return 'Good morning!'
@@ -33,28 +34,16 @@ def clear_screen():
 
 
 def check_database():
-    mydb = mysql.connector.connect(
-        host=con.HOST,
-        user=con.USER,
-        passwd=con.PASSWD
-    )
 
     def get_data():
-        my_cursor = mydb.cursor()
+        my_cursor = con.mydb.cursor()
         my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')
-        mydb.commit()
-        # print('\033[32m' + '[*]Database checked.' + '\033[0;0m')
+        con.mydb.commit()
 
     return get_data()
 
 
 def check_tables():
-    mydb = mysql.connector.connect(
-        host=con.HOST,
-        user=con.USER,
-        passwd=con.PASSWD,
-        database=con.DB
-    )
 
     tables = [
         'CREATE TABLE IF NOT EXISTS USER(ID INT AUTO_INCREMENT PRIMARY KEY, TYPE VARCHAR(255), LOGIN VARCHAR(255), '
@@ -63,27 +52,20 @@ def check_tables():
         '255), EMAIL VARCHAR(255), TAG VARCHAR(255));']
 
     def get_data():
-        my_cursor = mydb.cursor()
+        my_cursor = con.mydb.cursor()
         for table in tables:
             my_cursor.execute(table)
-        mydb.commit()
-        # print('\033[32m' + "[*]Tables checked" + '\033[0;0m')
+        con.mydb.commit()
 
     return get_data()
 
 
 def check_user():
-    mydb = mysql.connector.connect(
-        host=con.HOST,
-        user=con.USER,
-        passwd=con.PASSWD,
-        database=con.DB
-    )
 
     query = 'SELECT TYPE FROM USER'
 
     def get_data():
-        my_cursor = mydb.cursor()
+        my_cursor = con.mydb.cursor()
         my_cursor.execute(query)
         result = my_cursor.fetchall()
         if len(result) > 0:

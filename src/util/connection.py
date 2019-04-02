@@ -1,18 +1,19 @@
 import mysql.connector
 
-USER = ''
-PASSWD = ''
-HOST = ''
-DB = ''
+USER = 'guilherme'
+PASSWD = '3141'
+HOST = 'localhost'
+DB = 'USER'
+
+mydb = mysql.connector.connect(
+    host=HOST,
+    user=USER,
+    passwd=PASSWD,
+    database=DB
+)
 
 
 def select_data(query):
-    mydb = mysql.connector.connect(
-        host=HOST,
-        user=USER,
-        passwd=PASSWD,
-        database=DB
-    )
 
     def get_data():
         my_cursor = mydb.cursor()
@@ -24,13 +25,7 @@ def select_data(query):
 
 
 def insert_data(query):
-    mydb = mysql.connector.connect(
-        host="HOST",
-        user=USER,
-        passwd=PASSWD,
-        database=DB
-    )
-
+    
     def get_data():
         my_cursor = mydb.cursor()
         my_cursor.execute(query)
@@ -41,12 +36,7 @@ def insert_data(query):
 
 
 def remove_data(query):
-    mydb = mysql.connector.connect(
-        host="HOST",
-        user=USER,
-        passwd=PASSWD,
-        database=DB
-    )
+    
 
     def get_data():
         my_cursor = mydb.cursor()

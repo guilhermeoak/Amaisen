@@ -15,7 +15,7 @@ class RemoveUser:
 
             print('\nDelete user')
 
-            print('\n' + '\033[31m' + '0: Cancel' + '\033[0;0m')
+            print('\n0: Cancel')
             user_id = int(input('Type the user id: '))
 
             if user_id == 0:
@@ -26,5 +26,5 @@ class RemoveUser:
 
         else:
             clear_screen()
-            print('\033[31m' + 'You have no permissions to do it!' + '\033[0;0m')
+            print('You have no permissions to do it!')
             print(input('Press any key to continue...'))

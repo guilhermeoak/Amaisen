@@ -10,7 +10,7 @@ class Init:
         utils.clear_screen()
 
         now = datetime.now()
-        message = ('\033[34m' + utils.welcome(now.hour) + ' Amaisen is running' + '\033[0;0m')
+        message = (utils.welcome(now.hour) + ' Amaisen is running')
         utils.format_message(message)
 
         utils.check_database()
@@ -18,29 +18,29 @@ class Init:
 
         if not utils.check_user():
 
-            print('\033[33m' + '1: Sign Up' + '\033[0;0m')
-            print('\033[33m' + '2: Login' + '\033[0;0m')
-            print('\033[33m' + 'q: Exit' + '\033[0;0m')
+            print('1: Sign Up')
+            print('2: Login')
+            print('q: Exit')
 
-            number = str(input('\033[34m' + '\nChoose one: ' + '\033[0;0m'))
+            number = str(input('\033[34m' + '\nChoose one: '))
 
             if number == 'q':
                 utils.clear_screen()
-                print('\033[31m' + 'System finished!' + '\033[0;0m')
+                print('System finished!')
                 sys.exit()
             if number == '1':
                 AddUser()
             if number == '2':
                 None
         else:
-            print('\033[33m' + '1: Login' + '\033[0;0m')
-            print('\033[33m' + 'q: Exit' + '\033[0;0m')
+            print('1: Login')
+            print('q: Exit')
 
-            number = str(input('\033[34m' + '\nChoose one: ' + '\033[0;0m'))
+            number = str(input('\nChoose one: '))
 
             if number == 'q':
                 utils.clear_screen()
-                print('\033[31m' + 'System finished!' + '\033[0;0m')
+                print('System finished!')
                 sys.exit()
             if number == '1':
                 None

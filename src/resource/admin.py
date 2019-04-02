@@ -15,20 +15,20 @@ class Admin:
 
         while True:
 
-            print('\n' + '\033[33m' + '1: Send emails' + '\033[0;0m')
-            print('\033[33m' + '2: Add user' + '\033[0;0m')
-            print('\033[33m' + '3: Add customer' + '\033[0;0m')
-            print('\033[33m' + '4: Show users' + '\033[0;0m')
-            print('\033[33m' + '5: Show customers' + '\033[0;0m')
-            print('\033[33m' + '6: Delete user' + '\033[0;0m')
-            print('\033[33m' + '7: Log out' + '\033[0;0m')
-            print('\033[33m' + 'q: Exit' + '\033[0;0m')
+            print('\n1: Send emails')
+            print('2: Add user')
+            print('3: Add customer')
+            print('4: Show users')
+            print('5: Show customers')
+            print('6: Delete user')
+            print('7: Log out')
+            print('q: Exit')
 
-            number = str(input('\033[32m' + '\nChoose one: ' + '\033[0;0m'))
+            number = str(input('\nChoose one: '))
 
             if number == 'q':
                 clear_screen()
-                print('\033[31m' + 'System finished!' + '\033[0;0m')
+                print('System finished!')
                 sys.exit()
             if number == '1':
                 Email()

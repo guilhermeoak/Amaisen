@@ -12,7 +12,7 @@ def set_table():
     i = 0
     sql = 'SHOW TABLES;'
 
-    format_message('\033[33m' + 'Who will you sent emails for? ' + '\033[0;0m')
+    format_message('Who will you sent emails for? ')
 
     result = con.select_data(sql)
 
@@ -21,7 +21,7 @@ def set_table():
         print('[%i]' % i, table)
         i += 1
 
-    tb = int(input('\n' + '\033[33m' + 'Option: ' + '\033[0;0m'))
+    tb = int(input('\nOption: '))
 
     varTable = tableList[tb]
 

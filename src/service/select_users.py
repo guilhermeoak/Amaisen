@@ -18,5 +18,5 @@ class SelectUser:
             clear_screen()
         else:
             clear_screen()
-            print('\033[31m' + 'You have no permissions to do it!' + '\033[0;0m')
+            print('You have no permissions to do it!')
             print(input('Press any key to continue...'))
