@@ -2,4 +2,4 @@
 USER = ''
 PASSWD = ''
 HOST = ''
-DB = ' '
+DB = ''
