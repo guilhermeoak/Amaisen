@@ -35,7 +35,7 @@ def clear_screen():
 def check_database():
     def get_data():
         my_cursor = con.mydb.cursor()
-        my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')
+        my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')        
         con.mydb.commit()
 
     return get_data()
