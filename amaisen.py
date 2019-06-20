@@ -1,4 +1,3 @@
-'''#!/bin/bash'''
 from src.service.sign_in import SignIn
 from src.resource.admin import Admin
 from src.resource.common import Common

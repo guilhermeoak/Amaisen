@@ -1,2 +1,4 @@
 src/util/__pycache__
 .idea
+.vscode
+__pycache__
