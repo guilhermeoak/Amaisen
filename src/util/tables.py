@@ -1,6 +1,7 @@
 from . import connection as con
 from .utils import format_message
 from src.util.utils import clear_screen
+from . import utils
 
 tableList = []
 
@@ -12,7 +13,10 @@ def set_table():
     i = 0
     sql = 'SHOW TABLES;'
 
-    format_message('Who will you sent emails for? ')
+    if utils.os_name != 'Windows':
+        format_message('Who will you sent emails for? ')
+    else:
+        print('Who will you sent emails for?')
 
     result = con.select_data(sql)
 

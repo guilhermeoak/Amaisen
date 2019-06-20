@@ -6,7 +6,10 @@ from src.util import connection as con
 class AddCustomer:
     def __init__(self):
         utils.clear_screen()
-        utils.format_message('New Customer Registration')
+        if utils.os_name != 'Windows':
+            utils.format_message('New Customer Registration')
+        else:
+            print('New Customer Registration')
 
         if SignIn.get_user_type() == 'admin':
 

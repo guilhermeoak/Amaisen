@@ -11,7 +11,10 @@ class Init:
 
         now = datetime.now()
         message = (utils.welcome(now.hour) + ' Amaisen is running')
-        utils.format_message(message)
+        if utils.os_name != 'Windows':
+            utils.format_message(message)
+        else:
+            print(message)
 
         utils.check_database()
         utils.check_tables()

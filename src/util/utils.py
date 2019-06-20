@@ -1,8 +1,11 @@
 import os
 import platform
+import getpass
 import subprocess
 from . import connection as con
+import db_settings
 
+os_name = platform.system()
 
 def welcome(hour):
     if 00 <= hour < 12:
@@ -11,6 +14,7 @@ def welcome(hour):
         return 'Good afternoon!'
     if 18 <= hour <= 23:
         return 'Good evening!'
+
 
 
 def format_message(message):
@@ -24,12 +28,11 @@ def format_message(message):
     print(space, message)
 
 
-def clear_screen():
-    os_name = platform.system()
+def clear_screen():    
     if os_name == 'Linux' or os_name == 'Mac':
         subprocess.run(['clear'])
     if os_name == 'Windows':
-        subprocess.run(['cls'])
+        os.system('cls')
 
 
 def check_database():

@@ -1,8 +1,8 @@
 from src.util.connection import select_data
 import getpass
+from src.util import utils
 from src.util.utils import clear_screen
 from src.util.utils import format_message
-
 
 class SignIn:
 
@@ -23,7 +23,10 @@ class SignIn:
             global email
 
             clear_screen()
-            format_message('Put your login data in the respective fields\n')
+            if utils.os_name != 'Windows':
+                format_message('Put your login data in the respective fields\n')
+            else:
+                print('Put your login data in the respective fields\n')
             login = str(input('Login: '))
             passwd = getpass.getpass(prompt='Password: ')
             query = (
@@ -40,13 +43,19 @@ class SignIn:
             if len(result) > 0:
                 clear_screen()
                 message = ('Hello ' + user_name.capitalize())
-                format_message(message)
+                if utils.os_name != 'Windows':
+                    format_message(message)
+                else:
+                    print(message)
                 print(input('\nPress Enter to continue...'))
 
                 code = 0
             else:
                 clear_screen()
-                format_message('Login or Password wrong, please try again!')
+                if utils.os_name != 'Windows':
+                    format_message('Login or Password wrong, please try again!')
+                else:
+                    print('Login or Password wrong, please try again!')
                 print(input('\nPress Enter to continue...'))
 
     @staticmethod
