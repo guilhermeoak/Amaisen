@@ -1,8 +1,8 @@
-from src.util.connection import select_data
-import getpass
 from src.util import utils
 from src.util.utils import clear_screen
 from src.util.utils import format_message
+from src.util.connection import select_data
+import getpass
 
 class SignIn:
 
@@ -13,7 +13,7 @@ class SignIn:
     @staticmethod
     def sign_in():
         global code
-        code = 1
+        code = 1 
         while code == 1:
 
             global result

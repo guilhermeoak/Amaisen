@@ -35,7 +35,7 @@ def clear_screen():
         os.system('cls')
 
 
-def check_database():
+def check_database(): 
     def get_data():
         my_cursor = con.mydb.cursor()
         my_cursor.execute('CREATE DATABASE IF NOT EXISTS USER;')        
