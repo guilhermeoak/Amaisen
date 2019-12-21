@@ -3,10 +3,10 @@ class DatabaseInfo:
     As you can see, here we have the database information, in this case, all necessary for MySQL
     """
 
-    USER = ''
-    PASSWD = ''
-    HOST = ''
-    DB = ''
+    USER = ""
+    PASSWD = ""
+    HOST = ""
+    DB = ""
 
 
 class EmailServerInfo:
