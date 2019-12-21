@@ -4,6 +4,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from src import util
+from settings import EmailServerInfo as emailSetting
 
 
 class SendEmail:
@@ -17,7 +18,7 @@ class SendEmail:
 
         number_of_sent = 0
         for receiver in query:
-            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server = smtplib.SMTP(emailSetting.SERVER, emailSetting.PORT)
             server.starttls()
             server.login(my_email, password)
 

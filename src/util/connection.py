@@ -1,11 +1,11 @@
 import mysql.connector
-import db_settings as db
+from settings import DatabaseInfo as dB
 
 mydb = mysql.connector.connect(
-    host=db.HOST,
-    user=db.USER,
-    passwd=db.PASSWD,
-    database=db.DB
+    host=dB.HOST,
+    user=dB.USER,
+    passwd=dB.PASSWD,
+    database=dB.DB
 )
 
 

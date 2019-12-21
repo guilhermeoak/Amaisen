@@ -3,7 +3,7 @@ import platform
 import getpass
 import subprocess
 from . import connection as con
-import db_settings
+import settings
 
 os_name = platform.system()
 
