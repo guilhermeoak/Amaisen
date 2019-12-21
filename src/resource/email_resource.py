@@ -9,18 +9,29 @@ from src.util.utils import clear_screen
 class Email:
 
     def __init__(self):
-        table = tables.set_table()
-        clear_screen()
-        sql = ('SELECT * FROM %s ' % table)
-        sign_in = SignIn()
-        my_email = sign_in.get_email()
-        print("Your email: " + my_email)
+        global code
+        code = 1
 
-        password = getpass.getpass(prompt='[*]Type your email password: ')
-        subject = str(input('[*]Type the subject: '))
-        message = str(input('[*]Write your message: '))
+        try:
 
-        send_email = SendEmail(my_email, password, sql, subject, message)
+            while code == 1:
 
-        print('[!] %i emails sent!' % send_email.get_emails())
-        print('[!] Finished')
+                table = tables.set_table()
+                clear_screen()
+                sql = ('SELECT * FROM %s ' % table)
+                sign_in = SignIn()
+                my_email = sign_in.get_email()
+                print("Your email: " + my_email)
+
+                password = getpass.getpass(prompt='[*]Type your email password: ')
+                subject = str(input('[*]Type the subject: '))
+                message = str(input('[*]Write your message: '))
+
+                send_email = SendEmail(my_email, password, sql, subject, message)
+
+                print('[!] %i emails sent!' % send_email.get_emails())
+                print('[!] Finished')
+                code = 0
+
+        except KeyboardInterrupt:
+            code = 0

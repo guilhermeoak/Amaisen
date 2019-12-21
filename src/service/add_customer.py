@@ -5,24 +5,36 @@ from src.util import connection as con
 
 class AddCustomer:
     def __init__(self):
-        utils.clear_screen()
-        if utils.os_name != 'Windows':
-            utils.format_message('New Customer Registration')
-        else:
-            print('New Customer Registration')
+        global code
+        code = 1
 
-        if SignIn.get_user_type() == 'admin':
+        try:
 
-            name = str(input('Name: '))
-            last_name = str(input('Last name: '))
-            email = str(input('Email: '))
-            interests = str(input('Interests: '))
+            while code == 1:
 
-            query = ("INSERT INTO CUSTOMER (NAME, LASTNAME, EMAIL, TAG) VALUES('%s', '%s', '%s', '%s')" % (
-                name, last_name, email, interests))
+                utils.clear_screen()
+                if utils.os_name != 'Windows':
+                    utils.format_message('New Customer Registration')
+                else:
+                    print('New Customer Registration')
 
-            con.insert_data(query)
+                if SignIn.get_user_type() == 'admin':
 
-        else:
-            utils.clear_screen()
-            print('You have no permissions to do it!')
+                    name = str(input('Name: '))
+                    last_name = str(input('Last name: '))
+                    email = str(input('Email: '))
+                    interests = str(input('Interests: '))
+
+                    query = ("INSERT INTO CUSTOMER (NAME, LASTNAME, EMAIL, TAG) VALUES('%s', '%s', '%s', '%s')" % (
+                        name, last_name, email, interests))
+
+                    con.insert_data(query)
+                    code = 0
+
+                else:
+                    utils.clear_screen()
+                    code = 0
+                    print('You have no permissions to do it!')
+
+        except KeyboardInterrupt:
+            code = 0

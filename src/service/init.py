@@ -31,8 +31,6 @@ class Init:
  Created by Guilherme Carvalho
                                                   
 ''')
-        
-        
 
         if not utils.check_user():
 
@@ -40,7 +38,7 @@ class Init:
             print('2: Login')
             print('q: Exit')
 
-            number = str(input('\033[34m' + '\nChoose one: '))
+            number = str(input('\nChoose one: '))
 
             if number == 'q':
                 utils.clear_screen()

@@ -7,6 +7,7 @@ import settings
 
 os_name = platform.system()
 
+
 def welcome(hour):
     if 00 <= hour < 12:
         return 'Good morning!'
@@ -14,7 +15,6 @@ def welcome(hour):
         return 'Good afternoon!'
     if 18 <= hour <= 23:
         return 'Good evening!'
-
 
 
 def format_message(message):
@@ -47,7 +47,7 @@ def check_database():
 def check_tables():
     tables = [
         'CREATE TABLE IF NOT EXISTS USER(ID INT AUTO_INCREMENT PRIMARY KEY, TYPE VARCHAR(255), LOGIN VARCHAR(255), '
-        'PASSWORD VARCHAR(255), NAME VARCHAR(255), LASTNAME VARCHAR(255), EMAIL VARCHAR(255));',
+        'PASSWORD VARCHAR(255), NAME VARCHAR(255), LASTNAME VARCHAR(255), EMAIL VARCHAR(255), LOGADO INT);',
         'CREATE TABLE IF NOT EXISTS CUSTOMER(ID INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(255), LASTNAME VARCHAR('
         '255), EMAIL VARCHAR(255), TAG VARCHAR(255));']
 

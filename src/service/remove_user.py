@@ -8,23 +8,34 @@ from src.service.sign_in import SignIn
 class RemoveUser:
 
     def __init__(self):
+        global code
+        code = 1
 
-        if SignIn.get_user_type() == 'admin':
+        try:
 
-            SelectUser()
+            while code == 1:
 
-            print('\nDelete user')
+                if SignIn.get_user_type() == 'admin':
 
-            print('\n0: Cancel')
-            user_id = int(input('Type the user id: '))
+                    SelectUser()
 
-            if user_id == 0:
-                None
-            else:
-                query = ('DELETE FROM USER WHERE ID = %i' % user_id)
-                con.remove_data(query)
+                    print('\nDelete user')
 
-        else:
-            clear_screen()
-            print('You have no permissions to do it!')
-            print(input('Press any key to continue...'))
+                    print('\n0: Cancel')
+                    user_id = int(input('Type the user id: '))
+
+                    if user_id == 0:
+                        None
+                    else:
+                        query = ('DELETE FROM USER WHERE ID = %i' % user_id)
+                        con.remove_data(query)
+
+                else:
+                    clear_screen()
+                    print('You have no permissions to do it!')
+                    print(input('Press any key to continue...'))
+
+                code = 0
+
+        except KeyboardInterrupt:
+            code = 0
